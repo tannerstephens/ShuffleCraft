@@ -35,7 +35,7 @@ class ReverseProxied(object):
 
 def create_app(config='app.config.Config'):
   app = Flask(__name__)
-  # app.wsgi_app = ReverseProxied(app.wsgi_app)
+  app.wsgi_app = ReverseProxied(app.wsgi_app)
   app.config.from_object(config)
 
   with app.app_context():

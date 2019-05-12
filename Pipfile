@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pip = "==18.0"
 flask = "*"
+gunicorn = "*"
 
 [dev-packages]
 pylint = "*"
