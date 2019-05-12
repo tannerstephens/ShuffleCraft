@@ -10,4 +10,4 @@ def index():
 @views.route('/download')
 def download():
   file = make_shuffled_datapack()
-  return send_file(file, attachment_filename='ShuffleCraft.zip', as_attachment=True, cache_timeout=-1)
+  return send_file(file, attachment_filename='ShuffleCraft.zip', as_attachment=True, cache_timeout=0)
