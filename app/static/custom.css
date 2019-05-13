@@ -15,10 +15,14 @@ footer {
   height: 5vh;
 }
 
-a {
+a.social {
   color: #4a4a4a !important;
 }
 
-a:hover {
+a.social:hover {
   color: #990000 !important;
+}
+
+ol {
+  padding-left: 1em;
 }
