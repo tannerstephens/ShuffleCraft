@@ -29,9 +29,10 @@ Install python dependencies
 
 Populate original_recipes
 
-1. Open your prefered minecraft version in a file explorer (7zip, winzip, etc...)
+1. Open your prefered minecraft version, >=1.13, in a file explorer (7zip, winzip, etc...)
 2. Navigate to `data/minecraft/recipes`
-3. Copy the contents of this folder to `app/shuffle/original_recipes`
+3. Create a folder in `app/shuffle/versions` with the name of your selected version (e.g. `app/shuffle/versions/1.13.2`)
+4. Copy the contents of this folder to `app/shuffle/versions/<your_version>`
 
 Run the dev server
 

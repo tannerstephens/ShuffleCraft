@@ -1,4 +1,4 @@
-app/shuffle/original_recipes/*
-!app/shuffle/original_recipes/.gitkeep
+app/shuffle/versions/*
+!app/shuffle/versions/.gitkeep
 ShuffleCraft.zip
 .secret_key

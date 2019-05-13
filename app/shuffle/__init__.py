@@ -2,12 +2,12 @@ import glob, json, random, zipfile, os, io
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-def make_shuffled_datapack():
+def make_shuffled_datapack(version):
   recipes = {}
   results = {}
   items = []
 
-  for file in glob.glob(dir_path + '/original_recipes/*'):
+  for file in glob.glob(dir_path + '/versions/' + version + '/*.json'):
     try:
       name = file.split('/')[-1][:-5]
 
@@ -23,11 +23,11 @@ def make_shuffled_datapack():
       if 'result' not in data:
         continue
 
-      if data['type'] == 'minecraft:crafting_shaped':
+      if 'crafting_shaped' in data['type']:
         recipe = dict(type=data['type'], pattern=data['pattern'], key=data['key'])
-      elif data['type'] == 'minecraft:crafting_shapeless':
+      elif 'crafting_shapeless' in data['type']:
         recipe = dict(type=data['type'], ingredients=data['ingredients'])
-      elif data['type'] == 'minecraft:stonecutting':
+      elif 'stonecutting' in data['type']:
         continue
       else:
         recipe = dict(type=data['type'], ingredient=data['ingredient'], cookingtime=data['cookingtime'], experience=data['experience'])
@@ -69,6 +69,13 @@ def make_shuffled_datapack():
   output.seek(0)
 
   return output
+
+def get_versions():
+  versions = []
+  for file in glob.glob(dir_path + '/versions/*'):
+    versions.append(file.split("/")[-1])
+  return versions
+
 
 if __name__ == "__main__":
   with open("pack.zip", 'wb') as f:

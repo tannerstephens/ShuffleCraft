@@ -8,7 +8,20 @@
           <p>ShuffleCraft is an unofficial Minecraft datapack generator that shuffles your recipes! The recipes for planks, crafting tables, and furnaces are unchanged,
           but the rest is up to you to figure out! Every pack is different, so give it a try!</p>
           &nbsp;
-          <a class="button is-large is-fullwidth is-dark" href="/download" id="download">Download Now</a>
+          <div class="columns">
+            <div class="column is-one-quarter">
+              <div class="select is-fullwidth is-large is-dark">
+                <select id="version">
+                {% for version in versions %}
+                  <option>{{ version }}</option>
+                {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="column is-three-quarters">
+              <a class="button is-large is-fullwidth is-dark" href="/download" id="download">Download Now</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -19,7 +32,7 @@
         <div class="card-content">
           <h1 class="title">Pack Installation</h1>
           <ol>
-            <li>Open Minecraft 1.14</li>
+            <li>Open Minecraft</li>
             <li>Select the world you'd like to use the pack with</li>
             <li>Click Edit>Open World Folder</li>
             <li>Place the downloaded file in the datapacks folder</li>
@@ -32,8 +45,9 @@
 
   <script>
     $('#download').click(function(e) {
+      version = $("#version").val()
       e.preventDefault();
-      window.location.href = '/download?r=' + Math.random() + "&r2=" + Math.random();
+      window.location.href = '/download?r=' + Math.random() + "&r2=" + Math.random() + "&v=" + version;
     })
   </script>
 {% endblock content %}
