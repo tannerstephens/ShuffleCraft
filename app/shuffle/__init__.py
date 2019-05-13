@@ -48,7 +48,7 @@ def make_shuffled_datapack(version):
 
   for s,d in zip(items, items2):
     recipes[s].update(results[d])
-    if recipes[s]['type'] == 'minecraft:smelting':
+    if 'smelting' in recipes[s]['type']:
       if isinstance(recipes[s]['result'], dict):
         recipes[s]['result'] = recipes[s]['result']['item']
     else:
