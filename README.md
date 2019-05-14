@@ -27,11 +27,11 @@ Install python dependencies
 
 `$ pipenv install`
 
-Populate original_recipes
+Include original recipe files
 
 1. Open your prefered minecraft version, >=1.13, in a file explorer (7zip, winzip, etc...)
 2. Navigate to `data/minecraft/recipes`
-3. Create a folder in `app/shuffle/versions` with the name of your selected version (e.g. `app/shuffle/versions/1.13.2`)
+3. Create a folder in `app/shuffle/versions` with the name of your selected version (e.g. `app/shuffle/versions/1.13`)
 4. Copy the contents of this folder to `app/shuffle/versions/<your_version>`
 
 Run the dev server
